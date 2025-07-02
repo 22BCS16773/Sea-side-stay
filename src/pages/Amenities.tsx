@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Dumbbell,
-  Pool,
+  Droplets, // ✅ Replaces Pool
   Yoga,
   Utensils,
   Wine,
@@ -25,13 +25,12 @@ export default function Amenities() {
   const { t } = useLanguage();
 
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
   const getIcon = (categoryName: string, index: number) => {
     const icons = {
-      wellness: [<Flower key={0} />, <Dumbbell key={1} />, <Pool key={2} />, <Yoga key={3} />],
+      wellness: [<Flower key={0} />, <Dumbbell key={1} />, <Droplets key={2} />, <Yoga key={3} />],
       dining: [<Utensils key={0} />, <Coffee key={1} />, <Wine key={2} />, <Clock key={3} />],
       services: [<Clock key={0} />, <Plane key={1} />, <CarIcon key={2} />, <MapPin key={3} />],
       entertainment: [<Waves key={0} />, <Users key={1} />, <Music key={2} />, <BookOpen key={3} />]
@@ -61,7 +60,6 @@ export default function Amenities() {
             </div>
           </div>
 
-          {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
             <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
