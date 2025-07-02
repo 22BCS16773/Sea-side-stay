@@ -4,8 +4,7 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Dumbbell,
-  Droplets, // ✅ Replaces Pool
-  Yoga,
+  Droplets,
   Utensils,
   Wine,
   Coffee,
@@ -18,7 +17,8 @@ import {
   Users,
   Music,
   BookOpen,
-  Flower // ✅ Replaces Spa
+  Flower,
+  StretchHorizontal // ✅ Replaces invalid Yoga
 } from "lucide-react";
 
 export default function Amenities() {
@@ -30,7 +30,7 @@ export default function Amenities() {
 
   const getIcon = (categoryName: string, index: number) => {
     const icons = {
-      wellness: [<Flower key={0} />, <Dumbbell key={1} />, <Droplets key={2} />, <Yoga key={3} />],
+      wellness: [<Flower key={0} />, <Dumbbell key={1} />, <Droplets key={2} />, <StretchHorizontal key={3} />],
       dining: [<Utensils key={0} />, <Coffee key={1} />, <Wine key={2} />, <Clock key={3} />],
       services: [<Clock key={0} />, <Plane key={1} />, <CarIcon key={2} />, <MapPin key={3} />],
       entertainment: [<Waves key={0} />, <Users key={1} />, <Music key={2} />, <BookOpen key={3} />]
@@ -44,7 +44,6 @@ export default function Amenities() {
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background">
           <div className="container relative z-10 pt-20">
             <div className="text-center max-w-3xl mx-auto">
@@ -66,7 +65,6 @@ export default function Amenities() {
           </div>
         </section>
 
-        {/* Description Section */}
         <section className="py-16">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
@@ -77,7 +75,6 @@ export default function Amenities() {
           </div>
         </section>
 
-        {/* Categories Sections */}
         {Object.keys(t.amenitiesPage.categories).map((category, categoryIndex) => {
           const categoryData = t.amenitiesPage.categories[category as keyof typeof t.amenitiesPage.categories];
           const isEven = categoryIndex % 2 === 0;
@@ -114,7 +111,6 @@ export default function Amenities() {
           );
         })}
 
-        {/* Gallery Section */}
         <section className="py-16">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
